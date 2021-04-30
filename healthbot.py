@@ -32,10 +32,14 @@ async def on_message(message):
             embed.set_author(name= message.author.display_name, icon_url= avatarurl)
             embed.set_footer(text= message.id)
             await message.guild.get_channel(variables.johnchannelID).send(embed= embed)
+
         elif message.channel.id == variables.johnchannelID:
-            jcmessage = await message.guild.get_channel(variables.johnchannelID).fetch_message(message.reference.message_id)
-            replymessage = await message.guild.get_channel(variables.hotlineID).fetch_message(jcmessage.embeds[0].footer.text)
-            await replymessage.reply(message.content)
+            if message.reference:
+                jcmessage = await message.guild.get_channel(variables.johnchannelID).fetch_message(message.reference.message_id)
+                replymessage = await message.guild.get_channel(variables.hotlineID).fetch_message(jcmessage.embeds[0].footer.text)
+                await replymessage.reply(message.content)
+            else:
+                await message.guild.get_channel(variables.hotlineID).send(message.content)
     
     
     if message.author.id == 742315532472025109:

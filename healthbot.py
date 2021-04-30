@@ -9,7 +9,7 @@ userset = set()
 
 flag = True
 johnflag = True
-oldperm = dict() # {"channel id" : {"roleid", perm}}
+oldperm = dict() # {"channel id" : {"roleid": perm}}
 
 @client.event
 async def on_ready():

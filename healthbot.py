@@ -50,7 +50,7 @@ async def on_message(message):
 
     global oldperm
     johnlist = ["Yeah I love Jar Jar binks porn and feet. Those are my favorite things", "You're right. I am John, the bassist of the American band HEALTH.","ORGASMATRON?","would it be sich?","beej got short fingers","interesante","oh interesante","dude i LOVED pickle rick","MUFF DIVER!","DO I SMELL DICK?","i dont get it","how do i open pdf"]
-    roles = [variables.killervariables.eliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
+    roles = [variables.killereliteID,variables.eliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
 
     if message.content.startswith("anh "):
         global flag
@@ -61,6 +61,7 @@ async def on_message(message):
             for channel in server.channels:
                 if channel.id != variables.hotlineID and channel.category:
                     daux = dict()
+                    daux["everyone"] = channel.overwrites_for(message.guild.default_role).read_messages
                     for role in roles:
                         overwrite = channel.overwrites_for(message.guild.get_role(role))
                         daux[str(role)] = overwrite.read_messages
@@ -82,8 +83,7 @@ async def on_message(message):
         elif msg[1] == "endcycle":
             flag = False
         elif msg[1] == "normal":
-            for role in roles:
-                await client.get_channel(variables.hotlineID).set_permissions(message.guild.get_role(role), send_messages=True)
+            await message.guild.get_channel(variables.hotlineID).set_permissions(message.guild.default_role, send_messages=True)
             server = message.guild
             for channel in server.channels:
                 if channel.id != variables.hotlineID and channel.category:

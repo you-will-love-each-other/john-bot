@@ -28,7 +28,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("anh "):# and message.author.id in [233290361877823498,455301777055547394,627265323720114188]:
         global oldperm
-        roles = [variables.killervariables.eliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
+        roles = [variables.killereliteID,variables.eliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
         msg = message.content.lower().split()
         if msg[1] == "endcycle":
             global react
@@ -122,7 +122,7 @@ async def on_reaction_add(reaction, user):
                     embed.set_image(url= entry[6])
                 qmessage = await reaction.message.channel.send(embed= embed)
 
-                i = 5
+                i = 3
                 usedletters = []
                 wrongletterlist = []
                 wrongletters = "Letters not present in this word: "
@@ -143,7 +143,7 @@ async def on_reaction_add(reaction, user):
                         fixedletter = letter
                         await qmessage.clear_reactions()
                         count = 0
-                        i = 5
+                        i = 3
                         if fixedletter not in usedletters:
                             check,index = checkletter(word,fixedletter)
                             usedletters.append(fixedletter)

@@ -50,7 +50,7 @@ async def on_message(message):
 
     global oldperm
     johnlist = ["Yeah I love Jar Jar binks porn and feet. Those are my favorite things", "You're right. I am John, the bassist of the American band HEALTH.","ORGASMATRON?","would it be sich?","beej got short fingers","interesante","oh interesante","dude i LOVED pickle rick","MUFF DIVER!","DO I SMELL DICK?","i dont get it","how do i open pdf"]
-    roles = [variables.killereliteID,variables.eliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
+    roles = [variables.killereliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
 
     if message.content.startswith("anh "):
         global flag

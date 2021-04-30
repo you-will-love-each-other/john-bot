@@ -28,7 +28,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("anh "):# and message.author.id in [233290361877823498,455301777055547394,627265323720114188]:
         global oldperm
-        roles = [variables.killereliteID,variables.eliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
+        roles = [variables.killereliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
         msg = message.content.lower().split()
         if msg[1] == "endcycle":
             global react

@@ -24,3 +24,31 @@ So, as it's noticeable, every trivia question follows the same hangman type of a
 
 ### 5. El secreto and channels reappear
 Once the trivia is properly solved by the users, musik bot will have successfully recovered all the necessary data and will spill out a link. The link will contain "el secreto". After the link is sent, musik and HEALTH bot will start changing the channel permissions back to normal using the ``oldperm`` dictionary
+
+## variables.py
+
+```py
+# variables.py should look like this
+
+healthbot = 'health_bot_token'
+musik = 'musik_bot_token'
+
+hotlineID = 837639467413274663
+modchatID = 837639469195853833
+johnchannelID = 837639469452492855
+
+killereliteID = 837639467313397812
+patron1 = 837639467313397813
+patron2 = 837639467313397814
+patron3 = 837639467313397815
+eliteID = 837639467313397816
+nightmareID = 837639467170660395
+hurtID = 837639467170660394
+imtooID = 837639467170660393
+torquefestID = 837639467187306526
+ndaID = 837639467170660396
+
+new_saviorID = 837639467229118470
+
+react_number = 69
+```

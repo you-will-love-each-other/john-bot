@@ -62,6 +62,7 @@ async def on_message(message):
                         if overwrite.read_messages:
                             await channel.set_permissions(message.guild.get_role(role), read_messages=False)
                     oldperm[str(channel.id)] = daux
+            await message.guild.get_channel(variables.modchatID).send("anh endcycle")
         elif msg[1] == "normal":
             server = message.guild
             for channel in server.channels:

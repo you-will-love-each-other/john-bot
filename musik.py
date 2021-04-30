@@ -107,7 +107,8 @@ async def on_reaction_add(reaction, user):
             await proc.edit(content="```RESTORATION INITIATED...\n|████████████████████| 100%```")
             await asyncio.sleep(2)
 
-            trivia = []
+            trivia = []     #   ("initial_title","word_to_be_completed","empty_word","final_title","description","final_description","image_url")
+
             trivia.append(("INCOMPLETE DATA :: THE FIRST MEMBER BANNED WAS","LUSHDEATH","_________","DATA SUCCESSFULLY RETRIEVED :: THE FIRST MEMBER BANNED WAS","","",""))
             trivia.append(("INCOMPLETE DATA :: WHAT WORD FROM GROUP B BELONGS TO GROUP A?","TOWER","     ","DATA SUCCESSFULLY RETRIEVED :: TOWER BELONGS TO GROUP A","A) FRONT, SKI, MELON, FALL\nB) ROAD, TIRE, TOWER, CLIFF\n\n\n","Explanation: Each word in group A can pair with water",""))
             trivia.append(("INCOMPLETE DATA :: WORD THAT DESCRIBES JARID","_RINGE","C_____","DATA SUCCESSFULLY RETRIEVED :: THE WORD THAT DESCRIBES JARID IS","","","",))
@@ -130,7 +131,7 @@ async def on_reaction_add(reaction, user):
                 while True:
                     await asyncio.sleep(1)
                     if not(word):
-                        embed = discord.Embed(title= entry[3], description=blank + "\n\n" + entry[5], color=0x00ff00)
+                        embed = discord.Embed(title= entry[3], description=blank + "\n\n" + entry[4] + entry[5], color=0x00ff00)
                         if entry[6]:
                             embed.set_image(url= entry[6])
                         await qmessage.edit(content="", embed= embed)

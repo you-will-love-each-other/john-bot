@@ -28,7 +28,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("anh "):# and message.author.id in [233290361877823498,455301777055547394,627265323720114188]:
         global oldperm
-        roles = [variables.killereliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.ndaID]
+        roles = [variables.killereliteID, variables.patron1, variables.patron2, variables.patron3,variables.eliteID,variables.nightmareID,variables.hurtID,variables.imtooID,variables.torquefestID,variables.adventurerID,variables.ndaID]
         msg = message.content.lower().split()
         if msg[1] == "endcycle":
             global react
@@ -55,23 +55,29 @@ async def on_message(message):
                 if channel.id != variables.hotlineID and channel.category:
                     daux = dict()
                     daux["everyone"] = channel.overwrites_for(message.guild.default_role).read_messages
-                    await channel.set_permissions(message.guild.default_role, read_messages=False)
+                    overwrite = channel.overwrites_for(message.guild.default_role)
+                    overwrite.read_messages = False
+                    await channel.set_permissions(message.guild.default_role, overwrite=overwrite)
                     for role in roles:
                         overwrite = channel.overwrites_for(message.guild.get_role(role))
                         daux[str(role)] = overwrite.read_messages
                         if overwrite.read_messages:
-                            await channel.set_permissions(message.guild.get_role(role), read_messages=False)
+                            overwrite.read_messages = False
+                            await channel.set_permissions(message.guild.get_role(role), overwrite=overwrite)
                     oldperm[str(channel.id)] = daux
             await message.guild.get_channel(variables.modchatID).send("anh endcycle")
         elif msg[1] == "normal":
             server = message.guild
             for channel in server.channels:
                 if channel.id != variables.hotlineID and channel.category:
-                    await channel.set_permissions(message.guild.default_role, read_messages=oldperm[str(channel.id)]["everyone"])
+                    overwrite = channel.overwrites_for(message.guild.default_role)
+                    overwrite.read_messages = oldperm[str(channel.id)]["everyone"]
+                    await channel.set_permissions(message.guild.default_role, overwrite=overwrite)
                     for role in roles:
                         overwrite = channel.overwrites_for(message.guild.get_role(role))
                         if overwrite.read_messages == False and overwrite.read_messages != oldperm[str(channel.id)][str(role)]:
-                            await channel.set_permissions(message.guild.get_role(role), read_messages=oldperm[str(channel.id)][str(role)])
+                            overwrite.read_messages = oldperm[str(channel.id)][str(role)]
+                            await channel.set_permissions(message.guild.get_role(role), overwrite=overwrite)
 
 def checkletter(w,l):
     if l not in w:

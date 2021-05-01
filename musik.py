@@ -34,7 +34,7 @@ async def on_message(message):
             global react
             await client.get_channel(variables.hotlineID).trigger_typing()
             await asyncio.sleep(1)
-            await client.get_channel(variables.hotlineID).send("!mute <@774402228084670515>")
+            await client.get_channel(variables.hotlineID).send("!mute <@838174410987798558>")
             await client.get_channel(variables.hotlineID).trigger_typing()
             await asyncio.sleep(2)
             await client.get_channel(variables.hotlineID).send("RECURSIVE ERROR DETECTED :: FAILSAFE ACTIVATED")
@@ -210,7 +210,7 @@ async def on_reaction_add(reaction, user):
             await asyncio.sleep(2)
             await client.get_channel(variables.hotlineID).send("``WARNING LOG: DISCORDPY ERROR -- C:/ELSECRETO LINE 211 MISMATCH WITH RECOVERY``")
             await client.get_channel(variables.hotlineID).trigger_typing()
-            await client.get_channel(variables.hotlineID).send("``LINE 211:``")
+            await client.get_channel(variables.hotlineID).send("``LINE 211:`` ||htt||||p:||||//y||||ouw||||ill||||lov||||eea||||cho||||the||||r.c||||om/||||el-||||sec||||ret||||o-2||||021||||-pa||||rt-||||one||")
             await client.get_channel(variables.hotlineID).trigger_typing()
             await asyncio.sleep(1)
             await client.get_channel(variables.hotlineID).send("``SEE DOCUMENTATION FOR NON-CRITICAL ERROR RESOLUTION``")

@@ -1,11 +1,11 @@
 # HEALTHcord Anniversary Event 2021
-This repo has the files for musik and HEALTH BOT used in the surprise event for the HEALTHcord's first anniversary.
+This repo has the files for musik, JohnBot and HEALTH BOT used in the surprise event for the HEALTHcord's first anniversary.
 I will begin to describe how the bots work together and what happens in the event.
 
 ### 1. johnflag == True
-What is presented to the server members is that HEALTH BOT has a new feature - AI John - which just means whenever a user types in #health-hotline, HEALTH BOT will reply the same way John Famiglietti would. This feature is fake, however, so I'll explain what really is going on.
+What is presented to the server members is that there is a new feature - JohnBot - which just means whenever a user types in #health-hotline, a new bot will reply the same way John Famiglietti would. This feature is fake, however, so I'll explain what really is going on.
 
-When HEALTH BOT is started, the variable ``johnflag`` has a True value. This flag will become False whenever we type ``anh start [number_of_seconds]`` to start the actual event.
+When JohnBot is started, the variable ``johnflag`` has a True value. This flag will become False whenever we type ``anh start [number_of_seconds]`` to start the actual event.
 While ``johnflag`` is true, all the messages sent in #health-hotline will be replicated and sent to a secret channel where John will reply to them. Once John replies, that reply is sent back to #health-hotline by the bot, making it seem like it's the bot replying.
 
 ### 2. anh start [number_of_seconds]
@@ -16,7 +16,7 @@ Once this command is triggered, HEALTH BOT saves to the dictionary ``oldperm`` t
 Musik bot once receiving that command, starts saving to the dictionary ``oldperm`` the permissions and hiding all the channels for every user. When this cycle ends, musik bot send ``anh endcycle`` in the #mod-chat.
 
 ### 3. anh endcycle
-The user will now see HEALTH BOT ceasing to send the repeated messages. Musik bot comes in, mutes HEALTH BOT and sends a few messages, the last one asking the HEALTHcord members to help it saving the server. The members will then have the opportunity to react to that message with a :cacopog: until it reaches 69 reacts (the number desired by musik bot). When a member reacts, they get the SAVIOR II role, which will mark their participation in this event.
+The user will now see JohnBot ceasing to send the repeated messages. Musik bot comes in, mutes HEALTH BOT and sends a few messages, the last one asking the HEALTHcord members to help it saving the server. The members will then have the opportunity to react to that message with a :cacopog: until it reaches 69 reacts (the number desired by musik bot). When a member reacts, they get the SAVIOR II role, which will mark their participation in this event.
 
 ### 4. Trivia
 After reaching 69 reacts, musik bot will send some trivia. All the questions are stored in a list of tuples named ``trivia``, each tuple having the following structure: ``("initial_title","word_to_be_completed","empty_word","final_title","description","final_description","image_url")``

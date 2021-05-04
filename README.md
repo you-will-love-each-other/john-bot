@@ -1,4 +1,3 @@
-# HEALTHcord Anniversary Event 2021
 This repo has the files for musik, JohnBot and HEALTH BOT used in the surprise event for the HEALTHcord's first anniversary.
 I will begin to describe how the bots work together and what happens in the event.
 

@@ -1,4 +1,4 @@
-This repo has the files for musik, JohnBot and HEALTH BOT used in the surprise event for the HEALTHcord's first anniversary.
+This repo has the files for musik, JohnBot and HEALTH BOT used in the surprise event to announce HEALTH's collaboration track with Nine Inch Nails.
 I will begin to describe how the bots work together and what happens in the event.
 
 ### 1. johnflag == True

@@ -8,11 +8,11 @@ When JohnBot is started, the variable ``johnflag`` has a True value. This flag w
 While ``johnflag`` is true, all the messages sent in #health-hotline will be replicated and sent to a secret channel where John will reply to them. Once John replies, that reply is sent back to #health-hotline by the bot, making it seem like it's the bot replying.
 
 ### 2. anh start [number_of_seconds]
-This command starts the real event. What the uses sees is that HEALTH BOT seems to be glitching and starts to send out a hate message continuously. ``number_of_seconds`` indicates how many seconds the bot will wait before sending the hate message again.
+This command starts the real event. What the users sees is that HEALTH BOT seems to be glitching and starts to send out a hate message continuously. ``number_of_seconds`` indicates how many seconds the bot will wait before sending the hate message again.
 
 Once this command is triggered, HEALTH BOT saves to the dictionary ``oldperm`` the permissions in every channel of the server and sends out ``anh realstart`` in the #mod-chat then triggering musik bot.
 
-Musik bot once receiving that command, starts saving to the dictionary ``oldperm`` the permissions and hiding all the channels for every user. When this cycle ends, musik bot send ``anh endcycle`` in the #mod-chat.
+Musik bot once receiving that command, starts saving to the dictionary ``oldperm`` the permissions and hiding all the channels for every user. When this cycle ends, musik bot sends ``anh endcycle`` in the #mod-chat.
 
 ### 3. anh endcycle
 The user will now see JohnBot ceasing to send the repeated messages. Musik bot comes in, mutes HEALTH BOT and sends a few messages, the last one asking the HEALTHcord members to help it saving the server. The members will then have the opportunity to react to that message with a :cacopog: until it reaches 69 reacts (the number desired by musik bot). When a member reacts, they get the SAVIOR II role, which will mark their participation in this event.

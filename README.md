@@ -21,8 +21,8 @@ The user will now see JohnBot ceasing to send the repeated messages. Musik bot c
 After reaching 69 reacts, musik bot will send some trivia. All the questions are stored in a list of tuples named ``trivia``, each tuple having the following structure: ``("initial_title","word_to_be_completed","empty_word","final_title","description","final_description","image_url")``
 So, as it's noticeable, every trivia question follows the same hangman type of algorithm. The members will have to react to the embed sent by musik bot with the correct letters to fill the word. The bot choosed the letter with the most reacts every 3 seconds.
 
-### 5. El secreto and channels reappear
-Once the trivia is properly solved by the users, musik bot will have successfully recovered all the necessary data and will spill out a link. The link will contain "el secreto". After the link is sent, musik and HEALTH bot will start changing the channel permissions back to normal using the ``oldperm`` dictionary
+### 5. Secret link and channels reappear
+Once the trivia is properly solved by the users, musik bot will have successfully recovered all the necessary data and will spill out a link. The link will contain a video announcement of the collaboration. After the link is sent, musik and HEALTH bot will start changing the channel permissions back to normal using the ``oldperm`` dictionary
 
 ## variables.py
 

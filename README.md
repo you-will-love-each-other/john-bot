@@ -30,6 +30,7 @@ Once the trivia is properly solved by the users, musik bot will have successfull
 # variables.py should look like this
 
 healthbot = 'health_bot_token'
+johnbot = 'johnbot_token'
 musik = 'musik_bot_token'
 
 hotlineID = 837639467413274663
